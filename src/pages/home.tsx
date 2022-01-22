@@ -1,10 +1,11 @@
 import React from 'react';
 import './home.scss';
+import {Header} from "../components/Header";
 
 export const Home = () => {
   return (
-    <div>
-      <div className='x'></div>
+    <div className='wrapper'>
+        <Header/>
     </div>
   );
-};
+}
