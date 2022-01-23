@@ -7,9 +7,18 @@ export const Home = () => {
     <div className='wrapper'>
         <Header/>
         <main>
-            <section className='section1'></section>
-            <section className='section2'></section>
-            <section className='section3'></section>
+            <section className='section1'>
+                <div className='div1'></div>
+                <div className='div2'></div>
+            </section>
+            <section className='section2'>
+                <div className='div1'></div>
+                <div className='div2'></div>
+            </section>
+            <section className='section3'>
+                <div className='div1'></div>
+                <div className='div2'></div>
+            </section>
         </main>
     </div>
   );
