@@ -4,19 +4,14 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  //background: #03052c;
-  //background: #060644;
-  //background: -moz-linear-gradient(left, #060644 0%, #041569 50%, #060644 100%);
-  //background: -webkit-linear-gradient(left, #060644 0%, #041569 50%, #060644 100%);
-  //background: linear-gradient(to right, #060644 0%, #041569 50%, #060644 100%);
 
   > main {
     flex: 1;
     padding: px(20);
     display: grid;
-    grid-row-gap: px(54);
-    grid-column-gap: px(24);
-    grid-template-columns:1fr 1.5fr 1.5fr 1fr 1fr;
+    grid-row-gap: px(28);
+    grid-column-gap: px(18);
+    grid-template-columns:1.2fr 1.5fr 1.5fr 0.8fr 0.8fr;
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas:
     'box1 box2 box2 box3 box4'
@@ -25,11 +20,14 @@
     'box6 box7 box10 box11 box11';
 
     > section{
+      text-align: center;
+      color:white;
       border-radius: px(4);
       border:2px solid #0581fe;
       position: relative;
       box-shadow: 0 0 2px 0 #0f3361,inset 0 0 2px 0 #0f3361;
-      background: #100a4a;
+      //background: #100a4a;
+      background: #fff1d6;
       &::before{
         content:'';
         position: absolute;
@@ -47,11 +45,27 @@
                 0 12px 0 -10px #0d4483,
                 0 -12px 0 -10px #0d4483,
                 -12px 0 0 -10px #0d4483,;
-
       }
     }
     > .section1 {
       grid-area: box1;
+      display: flex;
+      flex-direction: column;
+      > h2{
+        color:black;
+        border:2px solid #0a5299;
+        display: inline-block;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        padding:px(10) px(28);
+        font-size: px(22);
+        line-height: px(24);
+        text-shadow: 0 0 px(3) white;
+      }
+      > .chart{
+        flex: 1;
+        border:2px solid red;
+      }
     }
 
     > .section2 {

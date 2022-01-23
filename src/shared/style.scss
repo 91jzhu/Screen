@@ -18,10 +18,11 @@ code {
 body {
   font-family: $font-hei;
   font-size: 16px;
-  background: #060644;
-  background: -moz-linear-gradient(left, #060644 0%, #041569 50%, #060644 100%);
-  background: -webkit-linear-gradient(left, #060644 0%, #041569 50%, #060644 100%);
-  background: linear-gradient(to right, #060644 0%, #041569 50%, #060644 100%);
+  background: #fff1d6;
+  //background: #060644;
+  //background: -moz-linear-gradient(left, #060644 0%, #041569 50%, #060644 100%);
+  //background: -webkit-linear-gradient(left, #060644 0%, #041569 50%, #060644 100%);
+  //background: linear-gradient(to right, #060644 0%, #041569 50%, #060644 100%);
 }
 
 #root{
@@ -31,5 +32,8 @@ body {
 }
 .App{
   flex:1
+}
+h1,h2,h3,h4,h5,h6{
+  font-size: px(16);
 }
 
