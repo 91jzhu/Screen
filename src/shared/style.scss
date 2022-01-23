@@ -18,13 +18,16 @@ code {
 body {
   font-family: $font-hei;
   font-size: 16px;
+  background: #060644;
+  background: -moz-linear-gradient(left, #060644 0%, #041569 50%, #060644 100%);
+  background: -webkit-linear-gradient(left, #060644 0%, #041569 50%, #060644 100%);
+  background: linear-gradient(to right, #060644 0%, #041569 50%, #060644 100%);
 }
 
 #root{
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  background: lightgreen;
 }
 .App{
   flex:1
