@@ -3,6 +3,7 @@ import './home.scss';
 import {Header} from "../components/Header";
 import * as echarts from 'echarts'
 import {Chart1} from "../charts/Chart1";
+import {Chart6} from "../charts/Chart6";
 
 export const Home = () => {
     return (
@@ -16,7 +17,9 @@ export const Home = () => {
                 <section className='section3'></section>
                 <section className='section4'></section>
                 <section className='section5'></section>
-                <section className='section6'></section>
+                <section className='section6'>
+                    <Chart6/>
+                </section>
                 <section className='section7'></section>
                 <section className='section8'></section>
                 <section className='section9'></section>

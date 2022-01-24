@@ -15,6 +15,12 @@ const Chart1 = () => {
                 top: '5%',
                 left: 'center',
             },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
             textStyle: {
                 fontSize: 16
             },
@@ -54,7 +60,7 @@ const Chart1 = () => {
     }, [])
     return (
         <>
-            <h2>数据总览</h2>
+            <h2>数 据 总 览</h2>
             <div className='chart' ref={divRef}/>
         </>
     )
