@@ -27,13 +27,20 @@ const Chart6 = () => {
                     type: 'category',
                     data: ['第一周', '第二周', '第三周', '第四周'],
                     axisTick: {
+                        show:false,
                         alignWithLabel: true
                     }
                 }
             ],
             yAxis: [
                 {
-                    type: 'value'
+                    type: 'value',
+                    splitLine:{
+                        show:false
+                    },
+                    axisLine:{
+                        show:true
+                    }
                 }
             ],
             series: [
@@ -60,7 +67,7 @@ const Chart6 = () => {
     }, [])
     return (
         <>
-            <h2>本月货主下单情况</h2>
+            <h2>本 月 货 主 下 单 情 况</h2>
             <div className='chart' ref={divRef}/>
         </>
     )

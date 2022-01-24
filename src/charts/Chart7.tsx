@@ -22,7 +22,8 @@ const Chart7 = () => {
                 },
                 axisTick:{
                     show:false
-                }
+                },
+
             },
             grid: {
                 top: '3%',
