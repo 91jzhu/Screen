@@ -110,7 +110,7 @@ const Chart10 = () => {
     }, [])
     return (
         <>
-            <h2>上 周 车 辆 使 用 情 况</h2>
+            <h2>上周车辆使用情况</h2>
             <div className='chart' ref={divRef}/>
         </>
     )

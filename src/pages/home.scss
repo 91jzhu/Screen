@@ -74,14 +74,17 @@
 
     > .section3 {
       grid-area: box3;
+      @extend .section1
     }
 
     > .section4 {
       grid-area: box4;
+      @extend .section1
     }
 
     > .section5 {
       grid-area: box5;
+      @extend .section1
     }
 
     > .section6 {
@@ -101,6 +104,7 @@
 
     > .section9 {
       grid-area: box9;
+      @extend .section1
     }
 
     > .section10 {
@@ -110,7 +114,7 @@
 
     > .section11 {
       grid-area: box11;
-
+      @extend .section1
     }
   }
 }

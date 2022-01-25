@@ -61,7 +61,7 @@ const Chart1 = () => {
     }, [])
     return (
         <>
-            <h2>数 据 总 览</h2>
+            <h2>数据总览</h2>
             <div className='chart' ref={divRef}/>
         </>
     )

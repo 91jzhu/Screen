@@ -64,7 +64,7 @@ const Chart7 = () => {
     }, [])
     return (
         <>
-            <h2>各 车 型 占 比 排 行 榜</h2>
+            <h2>各车型占比排行榜</h2>
             <div className='chart' ref={divRef}/>
         </>
     )

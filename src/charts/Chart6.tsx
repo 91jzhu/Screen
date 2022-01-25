@@ -67,7 +67,7 @@ const Chart6 = () => {
     }, [])
     return (
         <>
-            <h2>本 月 货 主 下 单 情 况</h2>
+            <h2>本月货主下单情况</h2>
             <div className='chart' ref={divRef}/>
         </>
     )

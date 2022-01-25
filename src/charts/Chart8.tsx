@@ -10,9 +10,9 @@ const Chart8 = () => {
         let myChart = echarts.init(divRef.current);
         myChart.setOption({
             grid: {
-                top: '11%',
+                top: '12%',
                 left: '2%',
-                right: '7%',
+                right: '2%',
                 bottom: '2%',
                 containLabel: true
             },
@@ -86,7 +86,7 @@ const Chart8 = () => {
     }, [])
     return (
         <>
-            <h2>本 月 新 增 车 辆 情 况</h2>
+            <h2>本月新增车辆情况</h2>
             <div className='chart' ref={divRef}/>
         </>
     )
