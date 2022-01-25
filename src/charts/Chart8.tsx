@@ -10,8 +10,8 @@ const Chart8 = () => {
         let myChart = echarts.init(divRef.current);
         myChart.setOption({
             grid: {
-                top: '10%',
-                left: '3%',
+                top: '11%',
+                left: '2%',
                 right: '7%',
                 bottom: '2%',
                 containLabel: true
@@ -19,14 +19,18 @@ const Chart8 = () => {
             xAxis: [
                 {
                     type: 'category',
-                    boundaryGap: false,
-                    data: ['','第一周', '第二周', '第三周', '第四周'],
+                    boundaryGap: true,
+                    data: ['第一周', '第二周', '第三周', '第四周'],
                     axisTick:{
                         show:false
                     },
                     splitLine:{
                         show:false,
                     },
+                    axisLabel: {
+                        show: true,
+                        interval: 0,
+                    }
                 },
             ],
             yAxis: [
@@ -75,7 +79,7 @@ const Chart8 = () => {
                     emphasis: {
                         focus: 'series'
                     },
-                    data: [0,2.0, 3.5, 5.0, 3.7]
+                    data: [2.0, 3.5, 5.0, 3.7]
                 }
             ]
         })

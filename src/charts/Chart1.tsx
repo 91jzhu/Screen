@@ -12,13 +12,14 @@ const Chart1 = () => {
                 trigger: 'item'
             },
             legend: {
-                top: '5%',
+                top: '2%',
                 left: 'center',
             },
             grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
+                top:0,
+                left: 0,
+                right: 0,
+                bottom: 0,
                 containLabel: true
             },
             textStyle: {
