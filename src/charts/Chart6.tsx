@@ -29,6 +29,9 @@ const Chart6 = () => {
                     axisTick: {
                         show:false,
                         alignWithLabel: true
+                    },
+                    axisLabel:{
+                        color:'#d4d6e2'
                     }
                 }
             ],
@@ -40,6 +43,9 @@ const Chart6 = () => {
                     },
                     axisLine:{
                         show:true
+                    },
+                    axisLabel:{
+                        color:'#d4d6e2'
                     }
                 }
             ],

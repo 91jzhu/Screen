@@ -11,7 +11,7 @@ const Chart7 = () => {
         myChart.setOption({
             xAxis: {
                 max: '3300',
-                show: false
+                show: false,
             },
             yAxis: {
                 type: 'category',
@@ -23,7 +23,9 @@ const Chart7 = () => {
                 axisTick:{
                     show:false
                 },
-
+                axisLabel:{
+                    color:'#d4d6e2'
+                }
             },
             grid: {
                 top: '3%',
@@ -38,7 +40,9 @@ const Chart7 = () => {
                     data: [2680, 2382, 1301, 942, 624, 407, 312, 201, 137],
                     label: {
                         show: true,
+                        color:'white',
                         position: 'right',
+                        fontSize:10,
                         valueAnimation: true
                     },
                     barWidth:12,

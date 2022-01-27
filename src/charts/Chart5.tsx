@@ -79,7 +79,7 @@ const Chart5 = () => {
                         width: 25,
                         height: 14,
                         fontSize: 12,
-                        color: 'auto',
+                        color: '#d4d6e2',
                         borderColor: 'auto',
                         borderRadius: 20,
                         borderWidth: 1,

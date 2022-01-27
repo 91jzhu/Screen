@@ -16,6 +16,9 @@ const Chart10 = () => {
                 left: '16%',
                 itemWidth: 8,
                 itemHeight: 4,
+                textStyle: {
+                    color: '#d4d6e2'
+                },
                 data: ['车辆总数', '运输中车辆', '使用率'],
             },
             grid: {
@@ -39,6 +42,7 @@ const Chart10 = () => {
                     },
                     axisLabel: {
                         show: true,
+                        color: '#d4d6e2',
                         interval: 0,
                     }
                 }
@@ -51,12 +55,12 @@ const Chart10 = () => {
                     name: '(千辆)        ',
                     nameTextStyle: {
                         verticalAlign: 'top',
-                        color: 'grey'
+                        color: '#d4d6e2'
                     },
                     nameLocation: 'end',
                     nameGap: 24,
                     axisLabel: {
-                        color: 'black',
+                        color: '#d4d6e2',
                         formatter: (value) => {
                             return value * 1.0 / 1000
                         }
@@ -78,7 +82,14 @@ const Chart10 = () => {
                     name: '          (%)',
                     nameTextStyle: {
                         verticalAlign: 'top',
-                        color: 'grey'
+                        color: '#d4d6e2',
+                    },
+                    axisLine: {
+                        show: true,
+                        color: '#d4d6e2'
+                    },
+                    splitLine: {
+                        show: false
                     },
                     nameGap: 24,
                     nameLocation: 'end',
@@ -89,19 +100,27 @@ const Chart10 = () => {
                     name: '车辆总数',
                     type: 'bar',
                     data: [
-                        8020,8200,8136,8234,8182,8156,8153
+                        8020, 8200, 8136, 8234, 8182, 8156, 8153
                     ]
                 },
                 {
                     name: '运输中车辆',
                     type: 'bar',
                     data: [
-                        7933,8092,8049,8200,8099,8101,8123
+                        7933, 8092, 8049, 8200, 8099, 8101, 8123
                     ]
                 },
                 {
                     name: '使用率',
                     type: 'line',
+                    lineStyle:{
+                        color:'#20f6f7'
+                    },
+                    itemStyle:{
+                        color:'#0dc1fb',
+                        borderColor:'white',
+                        borderType:'dotted'
+                    },
                     yAxisIndex: 1,
                     data: [95, 93, 96, 93, 94, 95, 93]
                 }

@@ -14,6 +14,9 @@ const Chart1 = () => {
             legend: {
                 top: '2%',
                 left: 'center',
+                textStyle:{
+                    color: '#d4d6e2'
+                }
             },
             grid: {
                 top:0,
@@ -23,8 +26,9 @@ const Chart1 = () => {
                 containLabel: true
             },
             textStyle: {
-                fontSize: 16
+                fontSize: 14
             },
+            color:['#2584f4','#0ee7ea','#fa967d'],
             series: [
                 {
                     type: 'pie',

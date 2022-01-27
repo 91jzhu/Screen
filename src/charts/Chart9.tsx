@@ -13,8 +13,8 @@ function makeOption(type,symbol=undefined) {
         },
         grid: {
             containLabel: true,
-            x:2,
-            x2:18,
+            x:4,
+            x2:20,
             y:2,
             y2:2
         },
@@ -26,6 +26,7 @@ function makeOption(type,symbol=undefined) {
             axisLabel: {
                 margin: 10,
                 fontSize: 14,
+                color: '#d4d6e2',
             },
             axisPointer: {
                 label: {
@@ -53,6 +54,19 @@ function makeOption(type,symbol=undefined) {
                     delay: function (idx, total) {
                         return (idx / total) * 1000;
                     }
+                },
+                itemStyle: {
+                    barBorderRadius: [0, 24, 24, 0],
+                    color: new echarts.graphic.LinearGradient(
+                        0, 1, 1, 0, [{
+                            offset: 0,
+                            color: '#78ccfe'
+                        },
+                            {
+                                offset: 1,
+                                color: '#fffefe'
+                            }]
+                    )
                 },
                 data: ['78','81.5','88']
             },

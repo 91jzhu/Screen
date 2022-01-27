@@ -21,42 +21,44 @@ const Chart8 = () => {
                     type: 'category',
                     boundaryGap: true,
                     data: ['第一周', '第二周', '第三周', '第四周'],
-                    axisTick:{
-                        show:false
+                    axisTick: {
+                        show: false
                     },
-                    splitLine:{
-                        show:false,
+                    splitLine: {
+                        show: false,
                     },
                     axisLabel: {
                         show: true,
                         interval: 0,
+                        color: '#d4d6e2'
                     }
                 },
             ],
             yAxis: [
                 {
                     type: 'value',
-                    name:'(%)        ',
-                    nameRotate:180,
-                    nameTextStyle:{
-                        verticalAlign:'top'
+                    name: '(%)        ',
+                    nameRotate: 180,
+                    nameTextStyle: {
+                        color:'#d4d6e2',
+                        verticalAlign: 'top'
                     },
-                    nameLocation:'end',
-                    nameGap:-3,
-                    max:6,
-                    splitLine:{
-                        show:false
+                    nameLocation: 'end',
+                    nameGap: -3,
+                    max: 6,
+                    splitLine: {
+                        show: false
                     },
-                    splitArea:{
-                        show:false
+                    splitArea: {
+                        show: false
                     },
-                    axisLine:{
-                        show:true
+                    axisLine: {
+                        show: true
                     },
-                    axisLabel:{
-
+                    axisLabel: {
+                        color: '#d4d6e2'
                     },
-                    interval:2
+                    interval: 2
                 }
             ],
             series: [
@@ -65,13 +67,14 @@ const Chart8 = () => {
                     stack: 'Total',
                     label: {
                         show: true,
+                        color:'white',
                         position: 'top'
                     },
-                    itemStyle:{
-                        normal:{
-                            color:'rgba(247, 168, 73,0.3)',
-                            lineStyle:{
-                                color:'#787cf1'
+                    itemStyle: {
+                        normal: {
+                            color: 'rgba(247, 168, 73,0.3)',
+                            lineStyle: {
+                                color: '#feb887'
                             }
                         }
                     },

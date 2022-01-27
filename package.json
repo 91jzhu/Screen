@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@types/node": "^17.0.12",
+    "caniuse-lite": "^1.0.30001302",
     "echarts": "5.0.2",
     "history": "4.9.0",
     "react": "17.0.2",

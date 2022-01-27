@@ -11,6 +11,7 @@ const gaugeData = [
         title: {
             offsetCenter: ['0%', '-44%']
         },
+
         detail: {
             valueAnimation: true,
             offsetCenter: ['0%', '0%']
@@ -76,17 +77,18 @@ const Chart3 = () => {
                     },
                     axisLabel: {
                         show: false,
-                        distance: 50
+                        distance: 50,
                     },
                     data: gaugeData,
                     title: {
-                        fontSize: 14
+                        color: '#d4d6e2',
+                        fontSize: 16
                     },
                     detail: {
                         width: 50,
                         height: 14,
                         fontSize: 14,
-                        color: 'auto',
+                        color: '#d4d6e2',
                         borderColor: 'auto',
                         borderRadius: 20,
                         borderWidth: 1,
