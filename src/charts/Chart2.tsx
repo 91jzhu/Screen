@@ -9,63 +9,100 @@ const Chart2 = () => {
         let myChart = echarts.init(divRef.current);
         echarts.registerMap('CN', china)
         myChart.setOption({
-            visualMap: {
-                type: "piecewise",//分段标签
-                min: 0,//最小值
-                max: 50,//最大值，不设置为无限大
-                right: 30,//距离右侧位置
-                bottom: 30,//距离底部位置
-                orient: "vertical",//组件竖直放置
-                align: "left",//色块在左
-                textGap: 14,//文字主体之间的距离
-                itemSymbol: "circle",//右下角映射组件使用圆点形状
-                show: true,
-                seriesIndex: 0,//指定取哪个系列的数据(series.data)，若不设置则会影响图上标点颜色设置。
-
-                //一以下是分段式视觉映射组件的每一段的范围
-                //gt：大于、gte：大于等于、lt：小于、lte：小于等于。
-            },
             geo: {
                 map: "CN",//上面引入的数据名
                 show: true,
                 roam: false,//关闭拖拽
-                label: {  //地图显示的地点名
-                    show: false,
-                    color: "#fff",
-                    fontSize: 16,
-                },
+                // regions: [{
+                //     name: '广东省',
+                //     itemStyle: {
+                //         areaColor: 'purple',
+                //         color: 'red',
+                //         shadowColor: 'rgba(0, 0, 0, 0.5)',
+                //         shadowBlur: 10
+                //     },
+                // }],
                 itemStyle: {
                     areaColor: "#99CBF9", //地图区域的颜色(没有数据时会按照这个颜色显示)
                     borderColor: "#fff",  //地图区域的边框
                     borderWidth: 0.6,
                 },
+                layoutCenter: ['64%', '50%'],
+                layoutSize: 320,
                 emphasis: {  //高亮的显示设置
+                    show:false,
+                    focus: 'self',
                     label: {
-                        color: "#fff",
+                        show: false,
+                        position: 'bottom',
+                        distance: 12,
+                        rotate: 90,
+                        color: "black",
+                        fontSize: 16,
+                        backgroundColor: '#fff',
+                        padding: [3, 10, 10, 3],
+                        lineHeight: 26,
+                        borderRadius: 12,
+                        formatter: ({name}) => name,
                     },
                     itemStyle: {
-                        areaColor: "#9DE3FF",
+                        areaColor: '#0a35a8'
+                        // areaColor: "#9DE3FF",
                     },
                 },
-                select: { //选中显示设置
-                    label: {
-                        color: "#fff",
-                    },
-                    itemStyle: {
-                        areaColor: "#9DE3FF",
-                    },
-                },
+                // select: { //选中显示设置
+                //     label: {
+                //         show:false,
+                //         color: "green",
+                //     },
+                //     itemStyle: {
+                //         areaColor: "#9DE3FF",
+                //     },
+                // },
             },
-            series: [
-                //配置数据的显示
-                {
-                    type: "map",  //类型map
-                    geoIndex: 0, //指定geo属性后，series-map.map 属性，以及 series-map.itemStyle 等样式配置不再起作用，而是采用 geo 中的相应属性。
-                    data: [{name: "杭州市", value: 6},
-                        {name: "湖州市", value: 0},
-                        {name: "嘉兴市", value: 0},],
-                },
 
+            series: [
+                {
+                    type: "map",
+                },
+                {
+                    type: "scatter", //类型：散点
+                    coordinateSystem: "geo", //使用地理坐标系
+                    label:{
+                        show:true,
+                        position:'top',
+                        formatter:'{b}',
+                    },
+                    itemStyle: {
+                        color: {
+                            type: "radial", // 径向渐变，前三个参数分别是圆心 x, y 和半径
+                            x: 0.5,
+                            y: 0.5,
+                            r: 0.5,
+                            colorStops: [
+                                {
+                                    offset: 0.5,
+                                    color: "#fff", // 50% 处的颜色
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgb(0 0 0 / 0%)", // 100% 处的颜色
+                                },
+                            ],
+                            global: false, // 缺省为 false
+                        },
+                        borderColor: "#fff", //边框白色
+                        borderWidth: 1,      //边框宽度
+                    },
+                    symbolSize: 10,    //散点大小
+                    data: [
+                        { name: "青海省", value: [96.5035076, 35.703459] },
+                        { name: "北京市", value: [116.5035076, 39.703459] },
+                        { name: "湖南省", value: [108.5035076, 23.703459] },
+                        { name: "安徽省", value: [117.5035076, 30.703459] },
+                    ],
+                    zlevel: 1,
+                }
             ]
         })
     }, [])

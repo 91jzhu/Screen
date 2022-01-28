@@ -12,7 +12,6 @@ import {Chart5} from "../charts/Chart5";
 import {Chart11} from "../charts/Chart11";
 import {Chart9} from "../charts/Chart9";
 import {Chart2} from "../charts/Chart2";
-import {Button} from "antd";
 
 export const Home = () => {
     return (
