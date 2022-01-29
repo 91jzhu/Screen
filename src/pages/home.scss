@@ -31,6 +31,7 @@
       background: linear-gradient(0deg, rgba(9,37,119,1) 0%, rgba(16,11,69,1) 50%, rgba(9,37,119,1) 100%);
 
       &::before {
+        pointer-events: none;
         content: '';
         position: absolute;
         left: 0;
