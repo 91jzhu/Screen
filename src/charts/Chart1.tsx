@@ -1,11 +1,11 @@
 import React, {useEffect, useRef} from "react";
 import * as echarts from "echarts";
+import {randomNum} from "../lib/randomNum";
 
-const px = (n) => n / 1600 * (window as any).pageWidth
 const Chart1 = () => {
     const divRef = useRef(null)
-    useEffect(() => {
-        console.log(divRef.current);
+    let time1
+    let setOption=()=>{
         let myChart = echarts.init(divRef.current);
         myChart.setOption({
             tooltip: {
@@ -14,12 +14,12 @@ const Chart1 = () => {
             legend: {
                 top: '2%',
                 left: 'center',
-                textStyle:{
+                textStyle: {
                     color: '#d4d6e2'
                 }
             },
             grid: {
-                top:0,
+                top: 0,
                 left: 0,
                 right: 0,
                 bottom: 0,
@@ -28,7 +28,7 @@ const Chart1 = () => {
             textStyle: {
                 fontSize: 14
             },
-            color:['#2584f4','#0ee7ea','#fa967d'],
+            color: ['#2584f4', '#0ee7ea', '#fa967d'],
             series: [
                 {
                     type: 'pie',
@@ -42,31 +42,45 @@ const Chart1 = () => {
                     },
                     label: {
                         show: false,
-                        position: 'center'
+                        position: 'center',
                     },
+
                     emphasis: {
                         label: {
                             show: true,
                             fontSize: '20',
-                            fontWeight: 'bold'
+
+                            fontWeight: 'bold',
                         }
                     },
                     labelLine: {
                         show: false,
                     },
                     data: [
-                        {value: 493080, name: '运单总量'},
-                        {value: 164360, name: '订单总量'},
-                        {value: 19653, name: '车辆总数'},
+                        {value: randomNum(100000, 500000), name: '运单总量'},
+                        {value: randomNum(100000, 500000), name: '订单总量'},
+                        {value: randomNum(100000, 500000), name: '车辆总数'},
                     ]
                 }
             ]
         })
+    }
+    const enter = () => {
+        window.clearInterval(time1)
+    }
+    const leave = () => {
+        time1=setInterval(() => {
+            setOption()
+            }, 1000)
+    }
+
+    useEffect(() => {
+        leave()
     }, [])
     return (
         <>
             <h2>数据总览</h2>
-            <div className='chart' ref={divRef}/>
+            <div className='chart' ref={divRef} onMouseEnter={enter} onMouseLeave={leave}/>
         </>
     )
 }
