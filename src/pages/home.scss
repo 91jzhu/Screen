@@ -73,8 +73,70 @@
 
     > .section2 {
       grid-area: box2;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
       > .chart{
         height:100%;
+        width:80%;
+      }
+      > .text{
+        text-shadow: 0 0 px(3) white;
+        position: absolute;
+        top:50%;
+        left:6%;
+        transform: translateY(-50%);
+        border-radius: px(4);
+        border: 2px solid #0581fe;
+        box-shadow: 0 0 2px 0 #0f3361, inset 0 0 2px 0 #0f3361;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 4px;
+          box-shadow: 22px 0 0 -20px #0f3361,
+          -22px 0 0 -20px #0f3361,
+          0 22px 0 -20px #0f3361,
+          0 -22px 0 -20px #0f3361,
+          12px 0 0 -10px #0d4483,
+          0 12px 0 -10px #0d4483,
+          0 -12px 0 -10px #0d4483,
+          -12px 0 0 -10px #0d4483,;
+        }
+
+        > h3{
+          font-size: px(20);
+          margin:px(8);
+        }
+        > .list{
+          list-style: none;
+          width:230px;
+          > li{
+            &:hover{
+              background: #2f80fe;
+            }
+            &:first-child{
+              font-size: px(18);
+              padding:6px 8px;
+              background: #307dfd;
+            }
+            &:last-child{
+              padding-bottom: 8px;
+            }
+            font-size: px(16);
+            background: #110a57;
+            padding:4px 8px;
+            display: flex;
+            justify-content: space-between;
+            > span{
+              width:64px;
+            }
+          }
+        }
       }
     }
 

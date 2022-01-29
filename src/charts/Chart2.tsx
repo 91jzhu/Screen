@@ -14,16 +14,12 @@ const Chart2 = () => {
                 mapType: 'map',
                 show: true,
                 roam: false,//关闭拖拽
-                // regions: [{
-                //     name: '广东省',
-                //     itemStyle: {
-                //         areaColor: 'purple',
-                //         color: 'red',
-                //         shadowColor: 'rgba(0, 0, 0, 0.5)',
-                //         shadowBlur: 10
-                //     },
-                // }],
                 itemStyle: {
+                    normal: {
+                        areaColor: '#0833a6',
+                        borderWidth: 1, //设置外层边框
+                        borderColor: '#0f70f8',
+                    },
                     areaColor: "#99CBF9", //地图区域的颜色(没有数据时会按照这个颜色显示)
                     borderColor: "#fff",  //地图区域的边框
                     borderWidth: 0.6,
@@ -48,117 +44,62 @@ const Chart2 = () => {
                     },
                     itemStyle: {
                         areaColor: '#0a35a8'
-                        // areaColor: "#9DE3FF",
                     },
                 },
-                // select: { //选中显示设置
-                //     label: {
-                //         show:false,
-                //         color: "green",
-                //     },
-                //     itemStyle: {
-                //         areaColor: "#9DE3FF",
-                //     },
-                // },
             },
 
             series: [
-                // {
-                //     name: 'Access From',
-                //     type: 'pie',
-                //     radius: ['45%', '60%'],
-                //     labelLine: {
-                //         length: 30
-                //     },
-                //     label: {
-                //         formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
-                //         backgroundColor: '#F6F8FC',
-                //         borderColor: '#8C8D8E',
-                //         borderWidth: 1,
-                //         borderRadius: 4,
-                //         rich: {
-                //             a: {
-                //                 color: '#6E7079',
-                //                 lineHeight: 22,
-                //                 align: 'center'
-                //             },
-                //             hr: {
-                //                 borderColor: '#8C8D8E',
-                //                 width: '100%',
-                //                 borderWidth: 1,
-                //                 height: 0
-                //             },
-                //             b: {
-                //                 color: '#4C5058',
-                //                 fontSize: 14,
-                //                 fontWeight: 'bold',
-                //                 lineHeight: 33
-                //             },
-                //             per: {
-                //                 color: '#fff',
-                //                 backgroundColor: '#4C5058',
-                //                 padding: [3, 4],
-                //                 borderRadius: 4
-                //             }
-                //         }
-                //     },
-                //     data: [
-                //         { value: 1048, name: 'Baidu' },
-                //         { value: 335, name: 'Direct' },
-                //         { value: 310, name: 'Email' },
-                //         { value: 251, name: 'Google' },
-                //         { value: 234, name: 'Union Ads' },
-                //         { value: 147, name: 'Bing' },
-                //         { value: 135, name: 'Video Ads' },
-                //         { value: 102, name: 'Others' }
-                //     ]
-                // },
                 {
-                    name:'china',
+                    name: 'China',
                     type: "effectScatter", //类型：散点
-                    effectType:'ripple',
-                    showEffectOn:'render',
-                    rippleEffect:{
-                        color:'#fc626d',
-                        scale:10,
+                    effectType: 'ripple',
+                    showEffectOn: 'render',
+                    rippleEffect: {
+                        color: 'cyan',
+                        scale: 10,
                         brushType: "stroke", // 空心
                     },
-                    label: {
-                        formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}:}{c}  {per|%}  ',
-                        show:false,
-                        // offset:[30,40],
-                        // formatter:'{b}',
-                        backgroundColor: '#F6F8FC',
-                        borderColor: '#8C8D8E',
-                        borderWidth: 1,
-                        position:"left",
-                        borderRadius: 4,
-                        rich: {
-                            a: {
-                                color: '#6E7079',
-                                lineHeight: 22,
-                                align: 'center'
-                            },
-                            hr: {
-                                borderColor: '#8C8D8E',
-                                width: '100%',
-                                borderWidth: 1,
-                                height: 0
-                            },
-                            b: {
-                                color: '#4C5058',
-                                fontSize: 14,
-                                fontWeight: 'bold',
-                                lineHeight: 33
-                            },
-                            per: {
-                                color: '#fff',
-                                backgroundColor: '#4C5058',
-                                padding: [3, 4],
-                                borderRadius: 4
+                    emphasis: {
+                        label: {
+                            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{per|[} {c} {per|]} {unit|经纬}  ',
+                            show: true,
+                            backgroundColor: '#F6F8FC',
+                            borderColor: '#8C8D8E',
+                            borderWidth: 1,
+                            position: "left",
+                            borderRadius: 4,
+                            rich: {
+                                a: {
+                                    fontSize: 18,
+                                    color: '#6E7079',
+                                    lineHeight: 32,
+                                    align: 'center'
+                                },
+                                hr: {
+                                    borderColor: '#8C8D8E',
+                                    width: '100%',
+                                    borderWidth: 1,
+                                    height: 0
+                                },
+                                b: {
+                                    color: '#4C5058',
+                                    fontSize: 14,
+                                    fontWeight: 'bold',
+                                    lineHeight: 28,
+                                },
+                                per: {
+                                    borderRadius: 4
+                                },
+                                unit: {
+                                    color: '#fff',
+                                    backgroundColor: '#4C5058',
+                                    padding: [3, 4],
+                                    borderRadius: 6
+                                }
                             }
-                        }
+                        },
                     },
+
                     coordinateSystem: "geo", //使用地理坐标系
                     itemStyle: {
                         color: {
@@ -181,12 +122,14 @@ const Chart2 = () => {
                         borderColor: "#fff", //边框白色
                         borderWidth: 1,      //边框宽度
                     },
-                    symbolSize:10,    //散点大小
+                    symbolSize: 10,    //散点大小
                     data: [
-                        {name: "青海省", value: [96.5035076, 35.703459]},
+                        {name: "上海市", value: [121.5035076, 31.703459]},
                         {name: "北京市", value: [116.5035076, 39.703459]},
-                        {name: "湖南省", value: [108.5035076, 23.703459]},
-                        {name: "安徽省", value: [117.5035076, 30.703459]},
+                        {name: "浙江省", value: [119.5035076, 27.703459]},
+                        {name: "湖北省", value: [112.5035076, 31.703459]},
+                        {name: "湖南省", value: [111.5035076, 27.703459]},
+                        {name: "四川省", value: [103.5035076, 30.703459]},
                     ],
                     zlevel: 1,
                 }
@@ -195,6 +138,19 @@ const Chart2 = () => {
     }, [])
     return (
         <>
+            <div className='text'>
+                <h3>上周最热门 7 条线路</h3>
+                <ol className='list'>
+                    <li><span>始发地</span><span>目的地</span><span>成交单数</span></li>
+                    <li><span>昌平</span><span>北京</span><span>1980</span></li>
+                    <li><span>上海</span><span>宝山</span><span>1679</span></li>
+                    <li><span>石桥</span><span>杭州</span><span>1065</span></li>
+                    <li><span>北京杨镇</span><span>北京顺义</span><span>982</span></li>
+                    <li><span>武汉</span><span>武昌</span><span>760</span></li>
+                    <li><span>长沙</span><span>成都</span><span>753</span></li>
+                    <li><span>深圳</span><span>虎门</span><span>750</span></li>
+                </ol>
+            </div>
             <div className='chart' ref={divRef}/>
         </>
     )
