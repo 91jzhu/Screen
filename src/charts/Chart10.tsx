@@ -84,9 +84,14 @@ const Chart10 = () => {
                         verticalAlign: 'top',
                         color: '#d4d6e2',
                     },
+                    axisLabel: {
+                        color: '#d4d6e2'
+                    },
                     axisLine: {
                         show: true,
-                        color: '#d4d6e2'
+                        lineStyle: {
+                            color: 'rgba(84, 112, 198,0.35)'
+                        }
                     },
                     splitLine: {
                         show: false
