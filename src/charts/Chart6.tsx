@@ -6,7 +6,6 @@ import {ChartOption} from "../components/ChartOption";
 let flash, myChart
 const Chart6 = () => {
     const divRef = useRef(null)
-
     const setOption = () => {
         myChart.setOption({
             tooltip: {
