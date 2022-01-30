@@ -1,12 +1,13 @@
 import React, {useEffect, useRef} from "react";
 import * as echarts from "echarts";
 import {randomNum} from "../lib/randomNum";
+import {ChartOption} from "../components/ChartOption";
+
+let flash, myChart
 
 const Chart1 = () => {
     const divRef = useRef(null)
-    let time1
-    let setOption=()=>{
-        let myChart = echarts.init(divRef.current);
+    const setOption = () => {
         myChart.setOption({
             tooltip: {
                 trigger: 'item'
@@ -65,22 +66,15 @@ const Chart1 = () => {
             ]
         })
     }
-    const enter = () => {
-        window.clearInterval(time1)
-    }
-    const leave = () => {
-        time1=setInterval(() => {
-            setOption()
-            }, 1000)
-    }
-
     useEffect(() => {
-        leave()
+        myChart = echarts.init(divRef.current)
+        flash = ChartOption(setOption)
+        flash.Leave()
     }, [])
     return (
         <>
             <h2>数据总览</h2>
-            <div className='chart' ref={divRef} onMouseEnter={enter} onMouseLeave={leave}/>
+            <div className='chart' ref={divRef} onMouseEnter={()=>flash.Enter()} onMouseLeave={()=>flash.Leave()}/>
         </>
     )
 }
