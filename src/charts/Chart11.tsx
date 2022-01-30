@@ -2,7 +2,6 @@ import React, {useEffect, useRef} from "react";
 import * as echarts from "echarts";
 import {randomNum} from "../lib/randomNum";
 import {ChartOption} from "../components/ChartOption";
-
 let flash, myChart
 const Chart11 = () => {
     const divRef = useRef(null)

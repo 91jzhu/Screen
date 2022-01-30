@@ -112,25 +112,23 @@
         > h3{
           font-size: px(20);
           margin:px(8);
+          color:white;
         }
         > .list{
           list-style: none;
           width:230px;
           > li{
-            &:hover{
-              background: #2f80fe;
-            }
             &:first-child{
               font-size: px(18);
               padding:6px 8px;
               background: #307dfd;
             }
             &:last-child{
-              padding-bottom: 8px;
+              padding-bottom:12px;
             }
             font-size: px(16);
             background: #110a57;
-            padding:4px 8px;
+            padding:5px 8px;
             display: flex;
             justify-content: space-between;
             > span{
