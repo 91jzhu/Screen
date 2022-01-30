@@ -1,7 +1,6 @@
 import React, {useEffect, useRef} from "react";
 import * as echarts from "echarts";
-
-const px = (n) => n / 1600 * (window as any).pageWidth
+import {ChartOption} from "../components/ChartOption";
 
 function makeOption(type,symbol=undefined) {
     return {
@@ -73,35 +72,34 @@ function makeOption(type,symbol=undefined) {
         ]
     };
 }
-
 const labelSetting = {
     show: true,
     position: 'right',
     offset: [10, 0],
     fontSize: 16
 };
-
 const options = [
     makeOption('pictorialBar'),
     makeOption('bar'),
     makeOption('pictorialBar', 'diamond')
 ];
-
+let flash, myChart
+let optionIndex = 0;
 const Chart9 = () => {
     const divRef = useRef(null)
+    const setOption = () => {
+        optionIndex = (optionIndex + 1) % options.length;
+        myChart.setOption(options[optionIndex])
+    }
     useEffect(() => {
-        let myChart = echarts.init(divRef.current);
-        let optionIndex = 0;
-        let option = options[optionIndex];
-        setInterval(function () {
-            optionIndex = (optionIndex + 1) % options.length;
-            myChart.setOption(options[optionIndex]);
-        }, 1000);
+        myChart = echarts.init(divRef.current)
+        flash = ChartOption(setOption)
+        flash.Leave()
     }, [])
     return (
         <>
             <h2>注册用户活跃度情况</h2>
-            <div className='chart' ref={divRef}/>
+            <div className='chart' ref={divRef} onMouseEnter={()=>flash.Enter()} onMouseLeave={()=>flash.Leave()}/>
         </>
     )
 }
